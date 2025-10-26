@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ofertas - BISUT-LUZ</title>
+
+  <!-- CSS: Bootstrap, Icons y styles.css (fonts ahora via @import en styles.css) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="img/logo.jpg">
+  <style>
+    /* Mantengo únicamente los estilos específicos del calendario que estaban inline */
+    /* Ajustes específicos para el calendario más grande */
+    #smallCalendar { width:100%; box-sizing:border-box; }
+    #smallCalendar .day { width:14.28%; height:56px; box-sizing:border-box; padding:8px 0; text-align:center; cursor:pointer; border-radius:6px; }
+    #smallCalendar .day.event { background: #fdebd6; border: 1px solid rgba(199,69,53,0.12); font-weight:700; }
+    #smallCalendar .day.today { background:#fff3e6; border: 1px solid rgba(238,176,99,0.12); }
+    #smallCalendar .day:hover { transform:translateY(-2px); transition:0.12s ease; box-shadow:0 6px 18px rgba(140,42,39,0.06); }
+    .calendar-card { min-height:420px; display:flex; flex-direction:column; justify-content:flex-start; }
+    .offers-column { min-height:420px; display:flex; flex-direction:column; gap:1rem; }
+    .offer-badge { background: linear-gradient(90deg,#e28d78,#c74535); color: #fff; padding:4px 8px; border-radius:6px; font-weight:700; font-size:0.85rem; }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.jpg" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
+        BISUT-LUZ - Ofertas
+      </a>
+      <ul class="navbar-nav ms-auto" id="navbarTabs" role="tablist">
+        <li class="nav-item"><a class="nav-link" href="index.html#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+        <li class="nav-item"><a class="nav-link" href="clases.html">Aprende</a></li>
+        <li class="nav-item"><a class="nav-link active" href="ofertas.html">Ofertas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row">
+      <!-- Columna izquierda: Calendario (ahora ocupa mitad) -->
+      <aside class="col-lg-6 mb-4">
+        <div class="card shadow-sm p-3 calendar-card">
+          <h5 class="card-title">Calendario</h5>
+          <div class="mb-2 small text-muted">Eventos y promociones programadas. Haz click en alguna fecha para ver.</div>
+
+          <div id="smallCalendar" class="mt-2"></div>
+
+          <!-- Ficha que muestra el/los eventos del día seleccionado -->
+          <div id="eventCard" class="mt-3" style="display:none;">
+            <div class="card p-2">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <strong id="eventCardDate"></strong>
+                  <div id="eventCardList" class="mt-2 small text-muted"></div>
+                </div>
+                <div>
+                  <button id="closeEventCard" class="btn btn-sm btn-outline-secondary">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Columna derecha: Ofertas (ahora ocupa mitad) -->
+      <main class="col-lg-6">
+        <h2 class="mb-3">Ofertas del mes</h2>
+
+        <div class="offers-column">
+          <!-- Oferta de ejemplo 1 -->
+          <div class="card p-3 shadow-sm">
+            <div class="d-flex justify-content-between align-items-start gap-3">
+              <div>
+                <div class="offer-badge mb-2">-20% KIT INICIO</div>
+                <h5 class="mb-1">Kit de Inicio</h5>
+                <p class="mb-1 small text-muted">Incluye alicates, hilos y cuentas de colores.</p>
+                <p class="mb-0">Precio especial por tiempo limitado.</p>
+              </div>
+              <div class="text-end">
+                <div class="mb-2 small text-muted">Válido hasta: 15/11/2025</div>
+                <a href="https://wa.me/59176951229?text=Hola,%20me%20interesa%20la%20oferta%20Kit%20de%20Inicio" class="btn btn-success">Consultar</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Oferta de ejemplo 2 -->
+          <div class="card p-3 shadow-sm">
+            <div class="d-flex justify-content-between align-items-start gap-3">
+              <div>
+                <div class="offer-badge mb-2">2x1 PULSERAS</div>
+                <h5 class="mb-1">Pulseras artesanales</h5>
+                <p class="mb-1 small text-muted">Llévate dos al precio de una (modelos específicos).</p>
+                <p class="mb-0">Promoción válida en tienda y pedidos por WhatsApp.</p>
+              </div>
+              <div class="text-end">
+                <div class="mb-2 small text-muted">Stock limitado</div>
+                <a href="https://wa.me/59176951229?text=Hola,%20me%20interesa%20la%20oferta%202x1%20de%20pulseras" class="btn btn-success">Comprar</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Oferta de ejemplo 3 -->
+          <div class="card p-3 shadow-sm">
+            <div class="d-flex justify-content-between align-items-start gap-3">
+              <div>
+                <div class="offer-badge mb-2">-15% CURSOS</div>
+                <h5 class="mb-1">Descuento en tutoriales básicos</h5>
+                <p class="mb-1 small text-muted">Compra ahora y obtén 15% en tutoriales básicos con material incluido.</p>
+                <p class="mb-0">Tutoriales limitados.</p>
+              </div>
+              <div class="text-end">
+                <div class="mb-2 small text-muted">Inicio: 01/12/2025</div>
+                <a href="https://wa.me/59176951229?text=Hola,%20me%20interesa%20el%20curso%20con%20descuento" class="btn btn-success">Inscribirme</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Agrega aquí más ofertas o un CTA -->
+          <div class="text-center mt-2">
+            <a href="productos.html" class="btn btn-outline-primary">Ver todos los productos</a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // Calendario interactivo con soporte de eventos guardados en localStorage
+    (function(){
+      const container = document.getElementById('smallCalendar');
+      const eventCard = document.getElementById('eventCard');
+      const eventCardDate = document.getElementById('eventCardDate');
+      const eventCardList = document.getElementById('eventCardList');
+      const closeEventCard = document.getElementById('closeEventCard');
+
+      function loadEvents(){
+        try{
+          return JSON.parse(localStorage.getItem('ofertas_events') || '{}');
+        }catch(e){
+          return {};
+        }
+      }
+      function saveEvents(evts){ localStorage.setItem('ofertas_events', JSON.stringify(evts)); }
+
+      // ejemplo de eventos por defecto (si no hay en localStorage)
+      const now = new Date();
+      function isoOf(d){ return d.toISOString().slice(0,10); }
+      function nextDate(month, day){
+        const y = now.getFullYear();
+        let d = new Date(y, month-1, day);
+        if (d < now) d = new Date(y+1, month-1, day); // si ya pasó este año, poner del siguiente
+        return isoOf(d);
+      }
+      function fourthFriday(year){
+        // calcula el cuarto viernes de noviembre (Black Friday)
+        const nov1 = new Date(year,10,1);
+        const firstFriday = 1 + ((5 - nov1.getDay() + 7) % 7);
+        const fourth = firstFriday + 21;
+        return isoOf(new Date(year,10,fourth));
+      }
+
+      const defaultEvents = {
+        [ nextDate(10,31) ]: ["Halloween: descuentos en accesorios temáticos."],
+        [ nextDate(12,25) ]: ["Navidad: 25% en kits seleccionados."],
+        [ nextDate(2,14) ]: ["San Valentín: ofertas en pares y regalos."],
+        [ fourthFriday(now.getFullYear()) ]: ["Black Friday: ofertas especiales por tiempo limitado."]
+      };
+
+      const stored = loadEvents();
+      const events = Object.keys(stored).length ? stored : defaultEvents;
+
+      function render(monthOffset = 0){
+        const now = new Date();
+        const date = new Date(now.getFullYear(), now.getMonth()+monthOffset, 1);
+        const month = date.getMonth();
+        const year = date.getFullYear();
+        const first = new Date(year, month, 1).getDay();
+        const days = new Date(year, month + 1, 0).getDate();
+        const monthNames = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+
+        let html = `<div class="d-flex justify-content-between align-items-center mb-2">
+                      <button id="prevMonth" class="btn btn-sm btn-outline-secondary">&lt;</button>
+                      <strong>${monthNames[month]} ${year}</strong>
+                      <button id="nextMonth" class="btn btn-sm btn-outline-secondary">&gt;</button>
+                    </div>`;
+        html += '<div class="d-flex flex-wrap">';
+        ['D','L','M','M','J','V','S'].forEach(d=> html += `<div style="width:14.28%; text-align:center; font-weight:600; padding:6px 0;">${d}</div>`);
+        for(let i=0;i<first;i++) html += `<div style="width:14.28%; height:56px"></div>`;
+        for(let d=1; d<=days; d++){
+          const iso = new Date(year, month, d).toISOString().slice(0,10);
+          const hasEvent = events[iso] && events[iso].length;
+          const isToday = (new Date().toISOString().slice(0,10) === iso);
+          html += `<div class="day${hasEvent? ' event':''}${isToday? ' today':''}" data-iso="${iso}">${d}</div>`;
+        }
+        html += '</div>';
+        container.innerHTML = html;
+
+        // Añadir listeners
+        container.querySelectorAll('.day').forEach(el => el.addEventListener('click', ()=> showEventsFor(el.getAttribute('data-iso')) ));
+        document.getElementById('prevMonth').addEventListener('click', ()=> render(monthOffset-1));
+        document.getElementById('nextMonth').addEventListener('click', ()=> render(monthOffset+1));
+      }
+
+      function showEventsFor(iso){
+        const evs = events[iso] || [];
+        eventCardDate.textContent = (new Date(iso)).toLocaleDateString();
+        eventCardList.innerHTML = evs.length ? evs.map(e=> `<div>- ${escapeHtml(e)}</div>`).join('') : '<div class="text-muted">No hay eventos para este día.</div>';
+        eventCard.style.display = 'block';
+        eventCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      closeEventCard.addEventListener('click', ()=> eventCard.style.display = 'none');
+
+      function escapeHtml(text){
+        return String(text).replace(/[&<>\"']/g, function(m){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[m]; });
+      }
+
+      render();
+    })();
+  </script>
+  <!-- FOOTER -->
+  <footer class="footer mt-5 py-4 text-center">
+    <div class="container">
+      <p>&copy; 2025 BISUT-LUZ | Todos los derechos reservados</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

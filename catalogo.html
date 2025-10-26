@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo - BISUT-LUZ</title>
+
+  <!-- CSS: Bootstrap, Icons y styles.css (fonts ahora via @import en styles.css) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="img/logo.jpg">
+</head>
+<body>
+  <!-- NAVBAR (misma apariencia que index.html) -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.jpg" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
+        BISUT-LUZ - Compra bisuteria
+      </a>
+      <ul class="navbar-nav ms-auto" id="navbarTabs" role="tablist">
+        <li class="nav-item"><a class="nav-link" href="index.html#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+        <li class="nav-item"><a class="nav-link" href="ofertas.html">Ofertas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <!-- Sección de Catálogo (tres carruseles) -->
+    <section id="catalogo">
+      <h4>Catálogo</h4>
+      <p>Te mostramos algunos diseños en distintos estilos, con distintas técnicas de creación y diferentes materiales.</p>
+
+      <div class="row g-4 mt-3">
+        <!-- Carrusel 1 -->
+        <div class="col-12 col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body p-2">
+              <h6 class="card-title text-center mb-2">Colección 1</h6>
+              <div id="carouselCatalogo1" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner rounded">
+                  <div class="carousel-item active">
+                    <img src="img/54.jpeg" class="d-block w-100" alt="Colección1 - 1" style="object-fit:cover; height:260px;">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/37.jpeg" class="d-block w-100" alt="Colección1 - 2" style="object-fit:cover; height:260px;">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCatalogo1" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselCatalogo1" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carrusel 2 -->
+        <div class="col-12 col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body p-2">
+              <h6 class="card-title text-center mb-2">Colección 2</h6>
+              <div id="carouselCatalogo2" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner rounded">
+                  <div class="carousel-item active">
+                    <img src="img/17.jpeg" class="d-block w-100" alt="Colección2 - 1" style="object-fit:cover; height:260px;">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/16.jpeg" class="d-block w-100" alt="Colección2 - 2" style="object-fit:cover; height:260px;">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCatalogo2" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselCatalogo2" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carrusel 3 -->
+        <div class="col-12 col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body p-2">
+              <h6 class="card-title text-center mb-2">Colección 3</h6>
+              <div id="carouselCatalogo3" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner rounded">
+                  <div class="carousel-item active">
+                    <img src="img/36.jpeg" class="d-block w-100" alt="Colección3 - 1" style="object-fit:cover; height:260px;">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/55.jpeg" class="d-block w-100" alt="Colección3 - 2" style="object-fit:cover; height:260px;">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCatalogo3" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselCatalogo3" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center mt-3">
+        <a href="https://wa.me/59176951229?text=Hola,%20me%20interesa%20el%20cat%C3%A1logo" target="_blank" rel="noopener" class="btn btn-success d-inline-flex align-items-center gap-2">
+          <i class="bi bi-whatsapp"></i>
+          Contactar por WhatsApp
+        </a>
+      </div>
+    </section>
+  </div>
+  <!-- FOOTER -->
+  <footer class="footer mt-5 py-4 text-center">
+    <div class="container">
+      <p>&copy; 2025 BISUT-LUZ | Todos los derechos reservados</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
